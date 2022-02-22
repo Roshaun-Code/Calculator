@@ -34,9 +34,14 @@ function operate(operater, num1, num2) {
 function updateDisplay(number){
     outputDisplay.innerHTML += number;
     console.log(outputDisplay);
-    
-
 }
 
+function allClear(){
+    outputDisplay.textContent = '';
+    console.log("cleared")
+}
+
+allClearButton.addEventListener('click', allClear);
 numberButtons.forEach((button) => button.addEventListener('click', () => updateDisplay(button.textContent)));
+
 
