@@ -1,94 +1,53 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+
 body{
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #96deda, #50c9c3);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-}
-.container{
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
+    min-height: 100vh;
+    background-color: #2F2D2E;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.container{
+    height: 600px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .calculator-body{
-    width: 350px;
-    height: 500px;
-    box-sizing: border-box;
+    display: grid;
+    min-height: 500px;
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: minmax(100px, auto)repeat(5, 75px);
+    border: 3px solid #2F2D2E;
+    box-shadow: 0 0 10px black;
+}
+
+.twice{
+    grid-column: span 2;
 }
 
 .screen{
-    box-sizing: border-box;
-    height: 25%;
-    background-color: rgba(0, 0, 0, .75);
-    box-sizing: border-box;
+    grid-column: 1/-1;
+    background-color: black;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: space-around;
-    color: rgba(255, 255, 255, 0.75);
     padding: 10px;
+    justify-content: space-around;
 }
 
-.current{
+.calculator-body > button{
+    border: 1px solid white;
+    outline: none;
     font-size: 2rem;
-}
-.calculator-bottom{
-    height: 75%;
-    display: flex;
-    justify-items: center;
-    box-sizing: border-box;
-}
-
-.numbers{
-    width: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: white;
-}
-
-.number{
-    /*border: 3px solid black;*/
-    display: flex;
-    height: 45px;
-    width: 45px;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(150, 222, 218, 0.75);
-    
-}
-
-.number:hover{
-    background-color: rgba(150, 222, 218, 0.90);
-}
-
-.operators{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: auto;
-    background-color: white;
-    padding: 5px;
-}
-
-.operator{
-    display: flex;
-    flex-direction: column;
-    height: 50px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(150, 222, 218, 0.75);
-}
-
-.operator:hover{
-    background-color: rgba(150, 222, 218, 0.90);
+    cursor: pointer;
 }
