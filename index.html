@@ -7,15 +7,17 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="header">Calculate Deez</div>
     <div class="container">
         <div class="calculator-body">
             <div class="screen">
-                <div class="current"></div>
+                <div data-previous class="previous"></div>
+                <div data-current class="current"></div>
             </div>
 
             <button data-all-clear id="twice" class="grey">AC</button>
             <button data-delete class="grey">DEL</button>
-            <button data-operation class="operator">/</button>
+            <button data-operation class="operator">÷</button>
             <button data-number>7</button>
             <button data-number>8</button>
             <button data-number>9</button>
@@ -31,7 +33,10 @@
             <button data-number id="twice">0</button>
             <button data-number>.</button>
             <button data-equals class="operator">=</button>
+        </div>
     </div>
+
+    <div class="footer">Made by roshaun-code</div>
     
 </body>
 </html>
