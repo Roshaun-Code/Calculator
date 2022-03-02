@@ -130,10 +130,3 @@ function keyboardInput(e){
     }
 }
 
-function convertOperator(operater){
-    if (operater === '/') return '÷';
-    if (operater === '+') return '+';
-    if (operator === '-') return '-';
-    if (operater === '*') return ''
-    
-}
