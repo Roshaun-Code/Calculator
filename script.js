@@ -71,12 +71,16 @@ numberButtons.forEach((button) => button.addEventListener('click', () => {
 operationButtons.forEach((button) => button.addEventListener('click', () => {
     if (currentElement.textContent === '') return;
     if (previousElement.textContent === '') {
+        currentNumber = currentElement.textContent;
         previousOperation = button.textContent;
         console.log(previousOperation);
         previousNumber = currentElement.textContent;
         currentElement.textContent = '';
         previousElement.textContent = `${previousNumber} ${previousOperation}`;
+        console.log(currentNumber);
     } else {
+        currentNumber = currentElement.textContent;
+        console.log(currentNumber);
         let calculation = operate(previousOperation, parseFloat(previousNumber), parseFloat(currentNumber))
         previousNumber = calculation;
         previousOperation = button.textContent;
@@ -94,15 +98,20 @@ deleteButton.addEventListener('click', () => {
 })
 
 equalButton.addEventListener('click', () => {
+    if (previousOperation == ''  || currentElement.textContent == '') return;
     currentNumber = currentElement.textContent;
     allClear();
     appendNumber(operate(previousOperation, parseFloat(previousNumber), parseFloat(currentNumber)));
 })
 
 function keyboardInput(e){
-    if (e.key >= 0 && e.key <= 9) appendNumber(e.key);
+    if (e.key >= 0 && e.key <= 9){
+        currentNumber = e.key;
+        appendNumber(currentNumber);
+    };
     if (e.key === '.') appendNumber(e.key);
     if (e.key == '=' || e.key === 'Enter') {
+        if (previousOperation == '' || currentElement.textContent == '') return;
         currentNumber = currentElement.textContent;
         allClear();
         appendNumber(operate(previousOperation, parseFloat(previousNumber), parseFloat(currentNumber)));
